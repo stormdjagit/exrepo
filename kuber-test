@@ -1,0 +1,11 @@
+import os
+from kubernetes import client, config
+
+def list_pods(namespace):
+    try:
+        config.load_kube_config()
+    except:
+        config.load_incluster_config()
+if __name__ == '__main__':
+    namespace = 'default'
+    list_pods(namespace)
